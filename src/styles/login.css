@@ -1,0 +1,417 @@
+.login-box {
+  width: 100%;
+  max-width: 50rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.login-box > * {
+  width: 100%;
+}
+.login-box > img {
+  height: 5rem;
+  object-fit: contain;
+}
+.signup-box > img {
+  height: 5rem;
+  object-fit: contain;
+  margin: 0 0 2.5rem 0;
+}
+.login-box h6 {
+  color: var(--white);
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 5rem 0 0 0;
+}
+.login-box h1 {
+  color: var(--white);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 2.5rem 0;
+}
+.login-inputs {
+  width: 100%;
+  border-radius: 1rem;
+  border: 2px solid var(--zinc-700);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 0;
+  overflow: hidden;
+}
+.login-inputs input {
+  width: 100%;
+  padding: 1.5rem 2rem;
+  background-color: var(--zinc-900);
+  outline: 0;
+  border: 0;
+  font-size: 1.65rem;
+  color: var(--white);
+}
+.login-inputs input::placeholder {
+  color: var(--zinc-500);
+}
+.login-inputs input:nth-child(1) {
+  border-bottom: 2px solid var(--zinc-700);
+}
+.login-box .btn-yellow {
+  margin: 3.5rem 0 0 0;
+}
+.social-logins-box {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1.5rem;
+}
+.social-logins-box button {
+  width: 100%;
+  padding: 1.5rem 0;
+  background-color: #1e1e1e;
+  outline: 0;
+  border: 0;
+  border-radius: 1000px;
+  font-size: 1.65rem;
+  font-weight: 400;
+  color: #fff;
+  position: relative;
+}
+.social-logins-box button b {
+  font-weight: 600;
+}
+.social-logins-box button svg {
+  position: absolute;
+  top: 50%;
+  left: 2.5rem;
+  transform: translate(0, -50%);
+}
+.or-box {
+  width: 100%;
+  margin: 3.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+}
+.or-box::before {
+  content: "";
+  width: 50%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0)
+  );
+  position: absolute;
+  top: 50%;
+  right: 0;
+  z-index: 1;
+}
+.or-box::after {
+  content: "";
+  width: 50%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.4)
+  );
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+}
+.or-box h5 {
+  width: max-content;
+  background-color: #08090b;
+  color: var(--white);
+  font-size: 1.5rem;
+  font-weight: 700;
+  z-index: 2;
+  position: relative;
+  padding: 0 1.5rem;
+}
+.or-box h5 span {
+  font-weight: 400;
+}
+.login-box > h5 {
+  font-size: 1.5rem;
+  color: var(--white);
+  text-align: center;
+  margin: 2.5rem 0 0 0;
+  font-weight: 400;
+}
+.login-box > h5 a {
+  color: var(--white);
+  font-weight: 700;
+  text-decoration: none;
+}
+.login-page {
+  width: 100%;
+  background-color: #08090b;
+  padding: 7.5rem 0;
+  min-height: 100vh;
+}
+.signup-page {
+  width: 100%;
+  background-color: #08090b;
+  padding: 5rem 0;
+  min-height: 100vh;
+  position: relative;
+}
+.signup-page > a {
+  position: absolute;
+  top: 5.5rem;
+  left: 7.5rem;
+}
+.signup-page > a img {
+  height: 3.5rem;
+}
+.signup-box {
+  width: 100%;
+  max-width: 50rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.signup-box > * {
+  width: 100%;
+}
+.signup-box h1 {
+  color: var(--white);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 2.5rem 0;
+}
+.uploadpicture-box {
+  width: 100%;
+  margin: 0 0 2.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.up-box {
+  width: 17.5rem;
+  height: 15rem;
+  border-radius: 8.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--zinc-700);
+  background: var(--zinc-900);
+  font-size: 1.5rem;
+  color: var(--zinc-500);
+}
+.up-box svg {
+  font-size: 2.25rem;
+  margin: 0 0 1rem 0;
+}
+.sp-inputbox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0 0 2.5rem 0;
+}
+.sp-inputbox > label {
+  color: var(--white);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.sp-inputbox label span {
+  font-size: 1.5rem;
+  color: var(--white);
+  opacity: 0.5;
+  text-decoration: underline;
+  font-weight: 400;
+  cursor: pointer;
+}
+.sp-inputbox input {
+  width: 100%;
+  padding: 1.5rem 2rem;
+  background-color: var(--zinc-900);
+  outline: 0;
+  border: 0;
+  font-size: 1.65rem;
+  color: var(--white);
+  border-radius: 0.75rem;
+  border: 2px solid var(--zinc-700);
+  overflow: hidden;
+}
+.signup-btns-box {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 10rem 1fr;
+  grid-gap: 2.5rem;
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: 2.5rem 0;
+}
+.btn-gray-1 {
+  width: 100%;
+  padding: 1.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--zinc-900);
+  border: 2px solid var(--zinc-700);
+  outline: 0;
+  border-radius: 1000px;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--white);
+}
+.kyc-prog {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 3.5rem 0;
+}
+.kyc-circle-done {
+  min-width: 3.5rem;
+  max-width: 3.5rem;
+  min-height: 3.5rem;
+  max-height: 3.5rem;
+  background-color: #1e1e1e;
+  border: 2px solid var(--yellow);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.75rem;
+  color: var(--yellow);
+}
+.kyc-circle-current {
+  min-width: 3.5rem;
+  max-width: 3.5rem;
+  min-height: 3.5rem;
+  max-height: 3.5rem;
+  background-color: var(--yellow);
+  border: 2px solid var(--yellow);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--black);
+}
+.kyc-circle-pending {
+  min-width: 3.5rem;
+  max-width: 3.5rem;
+  min-height: 3.5rem;
+  max-height: 3.5rem;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 2px solid var(--sky-high);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--yellow);
+}
+.kyc-line {
+  width: 100%;
+  height: 5px;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.kyc-line.kyc-line-done {
+  background-color: var(--yellow);
+}
+.signup-btns {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.signup-btns button {
+  width: max-content;
+  padding: 1.25rem 2.5rem;
+  border: 2px solid var(--zinc-700);
+  background-color: #18181b;
+}
+.sp-inputbox button span {
+  margin: 0 0 0 1rem;
+}
+.input-grp {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 6.5rem 1fr 6.5rem;
+  grid-gap: 0;
+  border-radius: 0.75rem;
+  border: 2px solid var(--zinc-700);
+  overflow: hidden;
+}
+.input-grp input {
+  border: 0;
+  border-radius: 0;
+  text-align: center;
+}
+.input-grp button {
+  border-radius: 0;
+  background-color: #3f3f46;
+}
+.attach-doc {
+  width: max-content;
+  padding: 1.5rem 3.5rem;
+  border: 2px solid var(--zinc-700);
+  background-color: #18181b;
+}
+.doc-img-box {
+  width: 100%;
+  max-width: 30rem;
+  height: 15rem;
+  background-color: #f1f1f1;
+  position: relative;
+  border-radius: 1rem;
+  margin: 1.5rem 0 0 0;
+}
+.doc-img-box span {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: #f87171;
+  color: var(--white);
+  border-radius: 0.75rem;
+  font-size: 2.25rem;
+}
+.sp-inputbox > p {
+  color: var(--white);
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 1.5rem 0 0.25rem 0;
+}
+.sp-inputbox > h6 {
+  color: var(--white);
+  font-size: 1.25rem;
+  font-weight: 400;
+  opacity: 0.5;
+}
+.occ-btns button {
+  margin: 1rem 0 0 0;
+}
+.occ-btns button span {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f87171;
+  color: var(--white);
+  border-radius: 0.5rem;
+  font-size: 2rem;
+}
