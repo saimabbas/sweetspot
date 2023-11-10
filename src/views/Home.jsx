@@ -44,7 +44,7 @@ const Home = () => {
   return (
     <div className="sweetspot">
       <main className="home-page">
-        <header>
+        <header className="home-header">
           <div className="box">
             <div className="header-content">
               <img src={Logo1} alt="Logo1" />
