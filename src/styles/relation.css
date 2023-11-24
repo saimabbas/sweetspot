@@ -350,13 +350,8 @@
   justify-content: flex-end;
 }
 .rch-right > button {
-  padding: 1.5rem 3.5rem;
-  white-space: nowrap;
-  margin: 0 0 0 2.5rem;
-}
-.rch-right > button svg {
-  font-size: 2rem;
-  margin: 0 1rem 0 0;
+  width: 4.25rem;
+  height: 4.25rem;
 }
 .rch-left > button {
   margin: 0 2.5rem 0 0;
@@ -415,4 +410,105 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media screen and (max-width: 1175px) {
+  .relation-main-grid {
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: auto;
+  }
+  .relation-quote,
+  .relation-advice,
+  .relation-problems {
+    grid-column: unset;
+  }
+  .gift-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .relation-main-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .relation-problems {
+    grid-column: 1/-1;
+  }
+  .relation-video.relation-box {
+    grid-column: 1/-1;
+    grid-row: unset;
+  }
+  .gift-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media screen and (max-width: 750px) {
+  .relation-main-grid {
+    grid-template-columns: 1fr;
+    padding: 0 0 2rem 0;
+  }
+  .gift-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem 1rem;
+  }
+  .relation-page header {
+    display: none;
+  }
+  .relation-page {
+    padding: 0;
+  }
+  .relation-content {
+    padding: 0;
+    background-color: transparent;
+  }
+  .relation-video.relation-box {
+    border: 0;
+    border-radius: 0;
+  }
+  .relation .box {
+    padding: 0;
+  }
+  .relation-box:not(.relation-video) {
+    width: calc(100% - 4rem);
+    margin: 0 auto;
+  }
+  .relation-box {
+    padding: 1.5rem;
+  }
+  .rc-head {
+    width: calc(100% - 4rem);
+
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    z-index: 1000;
+  }
+  .relation-chat-box {
+    padding: 10rem 0 7.25rem 0;
+  }
+  .rch-left > button {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin: 0 1rem 0 0;
+  }
+  .rch-left h4 {
+    font-size: 2.25rem;
+  }
+  .rch-right > button {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  .relation-msgs-box {
+    height: 50vh;
+  }
+  .gift-grid-card img {
+    border-radius: 0.5rem;
+  }
+  .relation-modal-content {
+    width: calc(100vw - 5rem);
+  }
+  .relation-box:not(.relation-video) p,
+  .relation-box:not(.relation-video) li {
+    font-size: 1.35rem;
+  }
 }

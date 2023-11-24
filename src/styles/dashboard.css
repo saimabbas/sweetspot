@@ -8,7 +8,7 @@
 }
 .dashboard-content {
   width: 100%;
-  padding: 15rem 0 0 0;
+  padding: 17.5rem 0 0 0;
 }
 .db-filled-grid {
   width: 100%;
@@ -77,4 +77,33 @@
   width: 5rem;
   height: 5rem;
   font-size: 2rem;
+}
+
+@media screen and (max-width: 1175px) {
+  .db-filled-grid-card > img {
+    width: 8.5rem;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .dashboard-content {
+    padding: 10rem 0 5rem 0;
+  }
+  .db-filled-grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 3.5rem;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .db-filled-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 3.5rem 1.5rem;
+  }
+  .db-filled-grid-card > img {
+    width: 7.5rem;
+  }
+  .db-filled-grid-card p {
+    font-size: 1.35rem;
+  }
 }

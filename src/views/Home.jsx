@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "../styles/globals.css";
 import "../styles/home.css";
 import {
@@ -8,6 +8,8 @@ import {
   BsFacebook,
   BsInstagram,
   BsLinkedin,
+  BsList,
+  BsX,
 } from "react-icons/bs";
 import Logo1 from "../assets/img/logo-1.svg";
 import HeroImg from "../assets/img/hero-img.svg";
@@ -41,6 +43,7 @@ import "swiper/css/navigation";
 import { Link } from "react-router-dom";
 
 const Home = () => {
+  const [isMobHeaderOpen, setIsMobHeaderOpen] = useState(false);
   return (
     <div className="sweetspot">
       <main className="home-page">
@@ -49,16 +52,46 @@ const Home = () => {
             <div className="header-content">
               <img src={Logo1} alt="Logo1" />
               <div className="header-center">
-                <a href="#">Home</a>
-                <a href="#">Chat</a>
-                <a href="#">Settings</a>
+                <Link to="/">Home</Link>
+                <Link to="/dashboard">Dashboard</Link>
+                <Link to="/settings">Settings</Link>
               </div>
-              <Link to="/login">
-                <button className="btn-yellow">Login</button>
-              </Link>
+              <div className="home-header-flex">
+                <Link to="/login">
+                  <button className="btn-yellow">Login</button>
+                </Link>
+                <span
+                  className="header-mob-icon"
+                  onClick={() => {
+                    setIsMobHeaderOpen(true);
+                  }}
+                >
+                  <BsList />
+                </span>
+              </div>
             </div>
           </div>
         </header>
+        {isMobHeaderOpen ? (
+          <div className="header-mob">
+            <div className="header-mob-header">
+              <img src={Logo1} alt="Logo1" />
+              <span
+                className="header-mob-icon"
+                onClick={() => {
+                  setIsMobHeaderOpen(false);
+                }}
+              >
+                <BsX />
+              </span>
+            </div>
+            <div className="header-mob-body">
+              <Link to="/">Home</Link>
+              <Link to="/dashboard">Dashboard</Link>
+              <Link to="/settings">Settings</Link>
+            </div>
+          </div>
+        ) : null}
         <section className="hero-section">
           <div className="hero-blurbox-1"></div>
           <div className="box">
@@ -78,6 +111,9 @@ const Home = () => {
                   <img src={GooglePlayImg} alt="GooglePlayImg" />
                   <img src={AppStoreImg} alt="AppStoreImg" />
                 </div>
+                <Link to="/login">
+                  <button className="btn-yellow">Login</button>
+                </Link>
               </div>
               <div className="hero-grid-right">
                 <img src={HeroImg} alt="HeroImg" />

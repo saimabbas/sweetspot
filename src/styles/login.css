@@ -5,13 +5,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0 2rem;
 }
 .login-box > * {
   width: 100%;
 }
-.login-box > img {
-  height: 5rem;
+.login-box > a > img {
+  height: 3.5rem;
   object-fit: contain;
+  margin: 0 0 3.5rem 0;
 }
 .signup-box > img {
   height: 5rem;
@@ -22,7 +24,6 @@
   color: var(--white);
   font-size: 1.5rem;
   font-weight: 400;
-  margin: 5rem 0 0 0;
 }
 .login-box h1 {
   color: var(--white);
@@ -173,6 +174,7 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  padding: 0 2rem;
   align-items: center;
 }
 .signup-box > * {
@@ -414,4 +416,24 @@
   color: var(--white);
   border-radius: 0.5rem;
   font-size: 2rem;
+}
+
+@media screen and (max-width: 1175px) {
+  .signup-page > a {
+    position: relative;
+    top: unset;
+    left: unset;
+    max-width: 50rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0 auto 3.5rem auto;
+    padding: 0 2rem;
+  }
+}
+@media screen and (max-width: 950px) {
+  .signup-page,
+  .login-page {
+    padding: 2.5rem 0;
+  }
 }

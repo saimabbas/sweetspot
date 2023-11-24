@@ -20,6 +20,7 @@ import {
   BsMicFill,
   BsImage,
   BsX,
+  BsThreeDotsVertical,
 } from "react-icons/bs";
 import Logo1 from "../assets/img/logo-1.svg";
 import PFPImg from "../assets/img/pfp.png";
@@ -32,6 +33,7 @@ import AddRelationImg from "../assets/img/add-relation.png";
 import LinkRelationImg from "../assets/img/link-relation-img.png";
 import GiftImg from "../assets/img/gift-img.png";
 import MicImg from "../assets/img/mic-img.svg";
+import { Link } from "react-router-dom";
 
 const Relation = () => {
   const [isRelationModalOpen, setisRelationModalOpen] = useState(false);
@@ -127,9 +129,9 @@ const Relation = () => {
             <div className="header-content">
               <img src={Logo1} alt="Logo1" />
               <div className="header-center">
-                <a href="#">Home</a>
-                <a href="#">Chat</a>
-                <a href="#">Settings</a>
+                <Link to="/">Home</Link>
+                <Link to="/dashboard">Dashboard</Link>
+                <Link to="/settings">Settings</Link>
               </div>
               <div className="header-right">
                 <div className="noti-con" ref={notificationRef}>
@@ -216,7 +218,7 @@ const Relation = () => {
                 </div>
                 <div className="rch-right">
                   <button className="btn-black-outlined">
-                    <BsTrash /> Delete
+                    <BsThreeDotsVertical />
                   </button>
                   {/* <button className="btn-yellow">
                     <BsChatTextFill /> Chat with AI

@@ -10,6 +10,9 @@ const Login = () => {
     <main className="sweetspot">
       <div className="login-page">
         <div className="login-box">
+          <Link to="/">
+            <img src={Logo1} alt="Logo1" />
+          </Link>
           <h6>Welcome Here</h6>
           <h1>Please Login with your email</h1>
           <div className="login-inputs">
