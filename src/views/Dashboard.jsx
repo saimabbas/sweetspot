@@ -21,6 +21,7 @@ import DBFilledImg1 from "../assets/img/f-img-11.svg";
 import DBEmptyImg from "../assets/img/db-add-relation-img.png";
 import DBTextBlur from "../assets/img/db-text-blur.png";
 import { Link } from "react-router-dom";
+import RelationBox from "../components/RelationBox";
 
 const Dashboard = () => {
   const [isNotiOpen, setIsNotiOpen] = useState(false);
@@ -162,13 +163,7 @@ const Dashboard = () => {
           <div className="dashboard-content">
             <div className="db-filled-grid">
               <Link to="/relation">
-                <div className="db-filled-grid-card">
-                  <img src={DBFilledImg1} alt="" />
-                  <p>
-                    <img src={DBTextBlur} alt="" />
-                    <span>Lisa</span>(Wife)
-                  </p>
-                </div>
+                <RelationBox />
               </Link>
               <Link to="/relation">
                 <div className="db-filled-grid-card">
@@ -249,14 +244,14 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
-        {/* <div className="db-btns">
+        <div className="db-btns">
           <button className="btn-yellow">
             <BsChatTextFill /> Chat with AI
           </button>
-          <button className="btn-black-outlined">
+          {/* <button className="btn-black-outlined">
             <BsBoxArrowLeft />
-          </button>
-        </div> */}
+          </button> */}
+        </div>
       </main>
     </div>
   );

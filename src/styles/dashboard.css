@@ -1,6 +1,6 @@
 .dashboard {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background: url("../assets/img/rd-bg.png");
   background-position: center;
   background-repeat: no-repeat;
@@ -33,7 +33,10 @@
   width: 10rem;
   object-fit: contain;
 }
-
+.db-filled-grid-card > svg {
+  width: 10rem;
+  object-fit: contain;
+}
 .db-filled-grid-card p {
   font-size: 1.65rem;
   color: var(--white);

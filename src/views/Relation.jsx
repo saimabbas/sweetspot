@@ -35,12 +35,35 @@ import GiftImg from "../assets/img/gift-img.png";
 import MicImg from "../assets/img/mic-img.svg";
 import { Link } from "react-router-dom";
 
+import gsap from "gsap";
+import {
+  Back,
+  Power3,
+  Power1,
+  Power2,
+  Power4,
+  Linear,
+  Expo,
+  Circ,
+} from "gsap/dist/gsap";
+import { ScrollSmoother } from "gsap/ScrollSmoother";
+import { Draggable } from "gsap/Draggable";
+import { InertiaPlugin } from "gsap/InertiaPlugin";
+import { SplitText } from "gsap/SplitText";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 const Relation = () => {
   const [isRelationModalOpen, setisRelationModalOpen] = useState(false);
   const [isRequestSent, setisRequestSent] = useState(false);
-
   const [isNotiOpen, setIsNotiOpen] = useState(false);
   const notificationRef = useRef(null);
+  gsap.registerPlugin(
+    Draggable,
+    SplitText,
+    InertiaPlugin,
+    ScrollSmoother,
+    ScrollTrigger
+  );
 
   const handleClickOutside = (event) => {
     if (
@@ -60,6 +83,25 @@ const Relation = () => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
+  }, []);
+
+  useEffect(() => {
+    gsap.fromTo(
+      ".relation-box",
+      {
+        y: "1.5rem",
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        delay: 0.5,
+        duration: 0.75,
+        stagger: {
+          each: 0.1,
+        },
+      }
+    );
   }, []);
 
   return (
@@ -331,7 +373,7 @@ const Relation = () => {
                   <div className="rs-con">
                     <div className="rs-box">
                       <div className="rs-box-text">
-                        <p>Problems Solved</p>
+                        <p>Goals Achieved</p>
                         <p>90%</p>
                       </div>
                       <div className="rs-prog">
@@ -344,7 +386,7 @@ const Relation = () => {
                     </div>
                     <div className="rs-box">
                       <div className="rs-box-text">
-                        <p>Closeness</p>
+                        <p>Communication</p>
                         <p>50%</p>
                       </div>
                       <div className="rs-prog">
@@ -357,7 +399,7 @@ const Relation = () => {
                     </div>
                     <div className="rs-box">
                       <div className="rs-box-text">
-                        <p>Problems Solved</p>
+                        <p>Overall Happiness</p>
                         <p>35%</p>
                       </div>
                       <div className="rs-prog">

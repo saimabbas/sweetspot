@@ -12,8 +12,8 @@ const App = () => {
   return (
     <Switch>
       <Routes>
-        <Route exact path="/" element={<Links />} />
-        <Route exact path="/home" element={<Home />} />
+        {/* <Route exact path="/" element={<Links />} /> */}
+        <Route exact path="/" element={<Home />} />
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/register" element={<Signup />} />
         <Route exact path="/dashboard" element={<Dashboard />} />

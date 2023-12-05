@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Links = () => {
   return (
     <div className="links-page">
-      <Link to="/home">Home</Link>
+      <Link to="/">Home</Link>
       <Link to="/dashboard">Dashboard</Link>
       <Link to="/relation">Relation</Link>
       <Link to="/settings">Settings</Link>

@@ -83,6 +83,10 @@
   line-height: 7.5rem;
   margin: 1.5rem 0 0 0;
 }
+.hero-grid-left p > div,
+.hero-grid-left h1 > div {
+  overflow: hidden;
+}
 .hero-grid-left p {
   color: var(--zinc-200);
   font-size: 1.6rem;
@@ -124,6 +128,7 @@
   left: 0;
   transform: translate(-50%, 0);
   z-index: 1;
+  filter: brightness(2);
 }
 .features-blur-2 {
   width: 50%;
@@ -252,7 +257,7 @@
 .features-grid-1 .f-img-1 {
   width: 25%;
   position: absolute;
-  bottom: 0;
+  bottom: 2.5rem;
   left: 0;
   object-fit: contain;
   z-index: 3;
@@ -291,8 +296,10 @@
   font-size: 3rem;
   font-weight: 700;
   margin: 0 0 1.5rem 0;
+  display: block;
 }
 .features-grid-text p {
+  display: block;
   color: var(--white);
   font-size: 1.5rem;
   font-weight: 400;
@@ -348,8 +355,8 @@
   position: relative;
   z-index: 2;
 }
-.foundation-content .stores-box {
-  margin: 5rem 0 10rem 0;
+.foundation-content h2 {
+  margin: 0 0 10rem 0;
 }
 .rd-img-box {
   width: 100%;
@@ -369,7 +376,11 @@
 }
 .testimonials-section {
   width: 100%;
-  padding: 15rem 0;
+  padding: 7.5rem 0;
+  background: url("../assets/img/download-bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .testimonials-content {
   width: 100%;
@@ -386,7 +397,7 @@
   width: 100%;
   border-radius: 1rem;
   border: 1px solid var(--zinc-700);
-  background: var(--zinc-900);
+  background: var(--zinc-800);
   padding: 3.5rem;
 }
 .testimonial-img-box {
@@ -480,7 +491,7 @@
 }
 .journey-section {
   width: 100%;
-  padding: 5rem 0;
+  padding: 7.5rem 0 5rem 0;
 }
 .journey-grid {
   width: 100%;
@@ -516,7 +527,7 @@
   text-align: left;
   font-size: 1.75rem;
   color: var(--white);
-  margin: 2.5rem 0 5rem 0;
+  margin: 2.5rem 0 0 0;
 }
 .journey-grid-right {
   width: 100%;
@@ -615,13 +626,13 @@ header.home-header {
   justify-content: space-between;
   position: relative;
 }
-.home-header .header-content::before {
-  content: "";
+.home-header-line {
   width: 100%;
   height: 1px;
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
   background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 0.1) 0%,
@@ -655,8 +666,12 @@ header.home-header {
   text-decoration: none;
   font-weight: 400;
 }
+.journey-grid-left > a,
 .hero-grid-left > a {
-  display: none;
+  margin: 5rem 0 0 0;
+  width: max-content;
+  display: flex;
+  min-width: 20rem;
 }
 @media screen and (max-width: 1175px) {
   .hero-grid-left h1 br {
@@ -702,8 +717,8 @@ header.home-header {
   .features-section {
     padding: 10rem 0 7.5rem 0;
   }
-  .foundation-content .stores-box {
-    margin: 5rem 0 5rem 0;
+  .foundation-content h2 {
+    margin: 0 0 5rem 0;
   }
   .testimonials-section {
     padding: 7.5rem 0;
@@ -720,10 +735,10 @@ header.home-header {
 }
 
 @media screen and (max-width: 950px) {
+  .journey-grid-left > a,
   .hero-grid-left > a {
-    display: flex;
-    margin: 5rem auto 0 auto;
     width: 75%;
+    margin: 5rem auto 0 auto;
   }
   .home-header .header-center {
     display: none;
@@ -912,8 +927,8 @@ header.home-header {
   .foundation-section {
     padding: 5rem 0 0 0;
   }
-  .foundation-content .stores-box {
-    margin: 2.5rem 0 5rem 0;
+  .foundation-content h2 {
+    margin: 0 0 5rem 0;
   }
   .rd-img-box {
     width: 90%;
