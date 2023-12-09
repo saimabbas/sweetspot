@@ -7,6 +7,7 @@ import Relation from "./views/Relation";
 import Settings from "./views/Settings";
 import Links from "./views/Links";
 import { BrowserRouter as Switch, Routes, Route } from "react-router-dom";
+import ChatLog from "./views/ChatLog";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Route exact path="/dashboard" element={<Dashboard />} />
         <Route exact path="/relation" element={<Relation />} />
         <Route exact path="/settings" element={<Settings />} />
+        <Route exact path="/chatlog" element={<ChatLog />} />
       </Routes>
     </Switch>
   );

@@ -69,7 +69,9 @@ const Relation = () => {
         <header className="global-header">
           <div className="box">
             <div className="header-content">
-              <img src={Logo1} alt="Logo1" />
+              <Link to="/">
+                <img src={Logo1} alt="Logo1" />
+              </Link>
               <div className="header-center">
                 <Link to="/">Home</Link>
                 <Link to="/dashboard">Dashboard</Link>
@@ -148,7 +150,7 @@ const Relation = () => {
                 </span>{" "}
                 <div className="pfp-box">
                   <img src={PFPImg} alt="" />
-                  <p>Hey, Usman</p>
+                  <p>Hey, Saim</p>
                 </div>
               </div>
             </div>
@@ -157,7 +159,9 @@ const Relation = () => {
         {isMobHeaderOpen ? (
           <div className="header-mob">
             <div className="header-mob-header">
-              <img src={Logo1} alt="Logo1" />
+              <Link to="/">
+                <img src={Logo1} alt="Logo1" />
+              </Link>
               <span
                 className="header-mob-icon"
                 onClick={() => {
@@ -171,6 +175,13 @@ const Relation = () => {
               <Link to="/">Home</Link>
               <Link to="/dashboard">Dashboard</Link>
               <Link to="/settings">Settings</Link>
+              <Link to="/login">
+                <button className="btn-yellow">LogIn</button>
+              </Link>
+
+              <Link to="/signup">
+                <button className="btn-black-outlined">Sign Up</button>
+              </Link>
             </div>
           </div>
         ) : null}

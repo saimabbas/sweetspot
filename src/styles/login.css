@@ -75,6 +75,10 @@
   font-weight: 400;
   color: #fff;
   position: relative;
+  transition: 0.25s;
+}
+.social-logins-box button:hover {
+  background-color: var(--zinc-900);
 }
 .social-logins-box button b {
   font-weight: 600;
@@ -143,7 +147,7 @@
   font-weight: 400;
 }
 .login-box > h5 a {
-  color: var(--white);
+  color: var(--yellow);
   font-weight: 700;
   text-decoration: none;
 }

@@ -1,6 +1,7 @@
 .relation-page {
   width: 100%;
   background-color: #08090b;
+  min-height: 100vh;
   padding: 15rem 0 5rem 0;
 }
 .relation-content {
@@ -25,13 +26,118 @@
   border: 1px solid var(--zinc-700);
   background: var(--zinc-900);
 }
-.relation-video.relation-box {
+.relation-box.relation-bot {
   grid-row: 1/4;
   padding: 0;
   position: relative;
   overflow: hidden;
+  overflow: hidden;
+  padding: 5rem;
+  background-color: var(--zinc-900);
 }
-.relation-video img {
+.chat-intro {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  cursor: pointer;
+  z-index: 100;
+}
+.relation-bot h2 {
+  position: relative;
+  font-size: 3.5rem;
+  font-weight: 500;
+  color: var(--yellow);
+  text-align: center;
+  z-index: 3;
+}
+.relation-bot p {
+  font-size: 1.25rem;
+  color: var(--white);
+  position: relative;
+  text-align: center;
+  z-index: 3;
+  font-weight: 500;
+}
+.relation-bot h6 {
+  font-size: 1.5rem;
+  color: var(--white);
+  margin: 1.5rem 0 0 0;
+  font-weight: 600;
+}
+.chat-text {
+  width: calc(100% - 5rem);
+  font-size: 2rem;
+  color: var(--white);
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, 2.5rem);
+  text-align: center;
+  z-index: 10;
+  font-weight: 500;
+  opacity: 0;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+}
+.chat-mic {
+  width: 5rem;
+  height: 5rem;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--yellow);
+  font-size: 2.5rem;
+  color: var(--zinc-800);
+  position: absolute;
+  bottom: 5rem;
+  left: 50%;
+  transform: translate(-50%, 0) scale(0.85);
+  opacity: 0;
+  z-index: 10;
+  cursor: pointer;
+}
+.rb-logo-box {
+  width: 12rem;
+  height: 12rem;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* opacity: 0; */
+  background-color: rgba(255, 255, 255, 0.025);
+  margin: 5rem 0;
+}
+.rb-logo-box img {
+  position: relative;
+  width: 6.5rem;
+  z-index: 3;
+  object-fit: contain;
+}
+.rb-top {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.rb-circle {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(var(--yellow), transparent);
+  border-radius: 100000px;
+  position: absolute;
+  bottom: 0;
+  transform: translate(-50%, 50%);
+  left: 50%;
+  filter: blur(100px);
+  z-index: 2;
+}
+.rv-video {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -39,6 +145,9 @@
   top: 0;
   left: 0;
   z-index: 5;
+  opacity: 0;
+  filter: blur(2px);
+  scale: 1.2;
 }
 .relation-chat-box {
   width: 100%;
@@ -69,33 +178,59 @@
   position: relative;
   display: flex;
   justify-content: flex-start;
-}
-.msg-ai p {
-  width: max-content;
-  max-width: 85%;
-  font-size: 1.5rem;
-  color: var(--white);
+  flex-direction: column;
   background-color: var(--zinc-800);
   padding: 1rem;
   border-radius: 0.75rem;
+  width: max-content;
+  max-width: 50%;
+}
+.msg-ai p {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: var(--white);
   font-weight: 500;
+}
+.msg-ai h6 {
+  font-size: 1.15rem;
+  color: var(--white);
+  margin: 1rem 0 0 0;
+  opacity: 0.5;
+  font-weight: 400;
+  text-align: right;
 }
 .msg-person {
   width: 100%;
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 1.5rem auto;
   position: relative;
   display: flex;
   justify-content: flex-end;
-}
-.msg-person p {
-  width: max-content;
-  font-weight: 500;
-  max-width: 85%;
-  font-size: 1.5rem;
-  color: var(--zinc-700);
+  flex-direction: column;
   background-color: var(--yellow);
   padding: 1rem;
   border-radius: 0.75rem;
+  max-width: 50%;
+  width: max-content;
+}
+.msg-person h6 {
+  font-size: 1.15rem;
+  color: var(--zinc-700);
+  margin: 1rem 0 0 0;
+  font-weight: 500;
+  text-align: right;
+}
+.chatlog-box > p {
+  font-size: 1.65rem;
+  color: var(--white);
+  margin: 0 0 1.5rem 0;
+  font-weight: 500;
+  text-align: center;
+}
+.msg-person p {
+  font-weight: 500;
+  line-height: 2rem;
+  font-size: 1.5rem !important;
+  color: var(--zinc-700) !important;
 }
 .typing-dots {
   width: max-content;
@@ -246,6 +381,7 @@
   justify-content: center;
   z-index: 2;
   position: relative;
+  cursor: pointer;
 }
 .arb-box img {
   width: 6.5rem;
@@ -312,8 +448,13 @@
   margin: 0 0 1.5rem 0;
 }
 .rg-head svg {
+  transition: 0.25s;
   font-size: 2rem;
+  cursor: pointer;
   color: var(--white);
+}
+.rg-head svg:hover {
+  color: var(--yellow);
 }
 .gift-grid {
   width: 100%;
@@ -326,6 +467,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
+}
+.gift-grid-card:hover p {
+  color: var(--yellow);
+}
+.gift-grid-card p {
+  transition: 0.25s;
 }
 .gift-grid-card img {
   width: 100%;
@@ -349,11 +497,12 @@
   align-items: center;
   justify-content: flex-end;
 }
-.rch-right > button {
+.rch-right button {
   width: 4.25rem;
   height: 4.25rem;
+  margin: 0 0 0 1.5rem;
 }
-.rch-left > button {
+.rch-left button {
   margin: 0 2.5rem 0 0;
   width: 4.25rem;
   height: 4.25rem;
@@ -434,7 +583,7 @@
   .relation-problems {
     grid-column: 1/-1;
   }
-  .relation-video.relation-box {
+  .relation-box.relation-bot {
     grid-column: 1/-1;
     grid-row: unset;
   }
@@ -455,38 +604,50 @@
     display: none;
   }
   .relation-page {
-    padding: 0;
+    padding: 0 0 2rem 0;
   }
   .relation-content {
     padding: 0;
     background-color: transparent;
   }
-  .relation-video.relation-box {
+  .relation-box.relation-bot {
     border: 0;
-    border-radius: 0;
+    padding: 2.5rem;
+  }
+  .relation-bot h2 {
+    font-size: 2.5rem;
+  }
+  .chatlog-box > p {
+    padding: 2rem;
   }
   .relation .box {
     padding: 0;
+  }
+  .relation-bot h6 {
+    font-size: 1.35rem;
+  }
+  .rb-logo-box img {
+    width: 4rem;
   }
   .relation-box:not(.relation-video) {
     width: calc(100% - 4rem);
     margin: 0 auto;
   }
+  .rb-logo-box {
+    width: 8.5rem;
+    height: 8.5rem;
+  }
   .relation-box {
     padding: 1.5rem;
   }
   .rc-head {
-    width: calc(100% - 4rem);
-
-    position: absolute;
-    top: 2rem;
-    left: 2rem;
-    z-index: 1000;
+    padding: 2rem;
+    margin: 0;
   }
   .relation-chat-box {
     padding: 10rem 0 7.25rem 0;
   }
-  .rch-left > button {
+  .rch-left button {
     width: 3.5rem;
     height: 3.5rem;
     margin: 0 1rem 0 0;
@@ -494,12 +655,9 @@
   .rch-left h4 {
     font-size: 2.25rem;
   }
-  .rch-right > button {
+  .rch-right button {
     width: 3.5rem;
     height: 3.5rem;
-  }
-  .relation-msgs-box {
-    height: 50vh;
   }
   .gift-grid-card img {
     border-radius: 0.5rem;
@@ -510,5 +668,12 @@
   .relation-box:not(.relation-video) p,
   .relation-box:not(.relation-video) li {
     font-size: 1.35rem;
+  }
+  .msg-person,
+  .msg-ai {
+    max-width: 90%;
+  }
+  .relation-msgs-box {
+    padding: 0;
   }
 }

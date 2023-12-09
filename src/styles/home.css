@@ -611,8 +611,11 @@ footer {
   font-weight: 400;
   margin: 0 0 0 2.5rem;
   text-decoration: none;
+  transition: 0.25s;
 }
-
+.footer-bottom > div a:hover {
+  color: var(--yellow);
+}
 /* Header */
 
 header.home-header {
@@ -641,7 +644,7 @@ header.home-header {
   );
   opacity: 0.3;
 }
-.home-header .header-content > img {
+.home-header .header-content > a > img {
   height: 3.5rem;
   object-fit: contain;
 }
@@ -665,6 +668,10 @@ header.home-header {
   font-size: 1.5rem;
   text-decoration: none;
   font-weight: 400;
+  transition: 0.25s;
+}
+.home-header .header-center a:hover {
+  color: var(--yellow);
 }
 .journey-grid-left > a,
 .hero-grid-left > a {
@@ -746,7 +753,7 @@ header.home-header {
   .home-header .header-content {
     padding: 2.5rem 0;
   }
-  .home-header .header-content > img {
+  .home-header .header-content > a > img {
     height: 3rem;
   }
   .home-header-flex {

@@ -21,10 +21,15 @@ import {
   BsImage,
   BsX,
   BsThreeDotsVertical,
+  BsSoundwave,
+  BsChatRightText,
+  BsTrash2,
 } from "react-icons/bs";
 import Logo1 from "../assets/img/logo-1.svg";
+import Logo2 from "../assets/img/emblem.png";
 import PFPImg from "../assets/img/pfp.png";
 import DBFilledImg1 from "../assets/img/f-img-11.svg";
+import TreeYellow from "../assets/video/tree-yellow.mp4";
 import DBEmptyImg from "../assets/img/db-add-relation-img.png";
 import DBTextBlur from "../assets/img/db-text-blur.png";
 import RelationVideoImg from "../assets/img/relation-video.png";
@@ -51,11 +56,14 @@ import { Draggable } from "gsap/Draggable";
 import { InertiaPlugin } from "gsap/InertiaPlugin";
 import { SplitText } from "gsap/SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import $ from "jquery";
 
 const Relation = () => {
   const [isRelationModalOpen, setisRelationModalOpen] = useState(false);
   const [isRequestSent, setisRequestSent] = useState(false);
   const [isNotiOpen, setIsNotiOpen] = useState(false);
+  const [isTalking, setIsTalking] = useState(false);
+  const [isChatLogOpen, setIsChatLogOpen] = useState(false);
   const notificationRef = useRef(null);
   gsap.registerPlugin(
     Draggable,
@@ -87,21 +95,154 @@ const Relation = () => {
 
   useEffect(() => {
     gsap.fromTo(
-      ".relation-box",
+      ".rs-prog-1 div",
       {
-        y: "1.5rem",
-        opacity: 0,
+        width: 0,
       },
       {
-        opacity: 1,
-        y: 0,
-        delay: 0.5,
-        duration: 0.75,
-        stagger: {
-          each: 0.1,
-        },
-      }
+        width: "90%",
+        delay: 1,
+        duration: 1,
+      },
+      0
     );
+    gsap.fromTo(
+      ".rs-prog-2 div",
+      {
+        width: 0,
+      },
+      {
+        delay: 1,
+        width: "50%",
+        duration: 1,
+      },
+      0
+    );
+    gsap.fromTo(
+      ".rs-prog-3 div",
+      {
+        width: 0,
+      },
+      {
+        delay: 1,
+        width: "65%",
+        duration: 1,
+      },
+      0
+    );
+
+    let landingAnim = gsap.timeline({
+      delay: 1,
+    });
+    landingAnim
+      .fromTo(
+        ".rb-circle",
+        {
+          width: 0,
+          height: 0,
+        },
+        {
+          width: "100%",
+          height: "100%",
+          duration: 2,
+        }
+      )
+
+      .fromTo(
+        ".relation-bot h2",
+        {
+          y: "1.5rem",
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.75,
+        },
+        "<0.5"
+      )
+      .fromTo(
+        ".relation-bot p",
+        {
+          y: "1.5rem",
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.75,
+        },
+        "<0.5"
+      )
+      .fromTo(
+        ".relation-bot h6",
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+          duration: 0.75,
+        }
+      )
+      .fromTo(
+        ".rb-logo-box",
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+          duration: 0.75,
+        },
+        "<0"
+      )
+      .then(() => {
+        gsap.to(".rb-logo-box", {
+          scale: 0.85,
+          duration: 1.5,
+          repeat: -1,
+          delay: 1,
+          yoyo: true,
+          ease: Power2.easeInOut,
+        });
+      });
+
+    $(".chat-intro").click(() => {
+      landingAnim.reverse().then(() => {
+        let chatStartAnim = gsap.timeline();
+        chatStartAnim
+
+          .to(".rv-video", {
+            opacity: 1,
+            duration: 1,
+          })
+          .to(
+            ".chat-text",
+            {
+              opacity: 1,
+              y: 0,
+              duration: 1,
+            },
+            "<0.5"
+          )
+          .to(
+            ".chat-mic",
+            {
+              opacity: 1,
+              scale: 1,
+              duration: 1,
+            },
+            "<0"
+          )
+          .to(
+            ".chat-intro",
+            {
+              zIndex: 0,
+              duration: 1,
+            },
+            "<0"
+          );
+      });
+    });
   }, []);
 
   return (
@@ -165,7 +306,6 @@ const Relation = () => {
             </div>
           </div>
         ) : null}
-
         <header className="global-header">
           <div className="box">
             <div className="header-content">
@@ -240,7 +380,7 @@ const Relation = () => {
                 </div>
                 <div className="pfp-box">
                   <img src={PFPImg} alt="" />
-                  <p>Hey, Usman</p>
+                  <p>Hey, Saim</p>
                 </div>
               </div>
             </div>
@@ -251,90 +391,76 @@ const Relation = () => {
             <div className="relation-content">
               <div className="rc-head">
                 <div className="rch-left">
-                  <button className="btn-black-outlined">
-                    <BsChevronLeft />
-                  </button>
+                  <Link to="/dashboard">
+                    <button className="btn-black-outlined">
+                      <BsChevronLeft />
+                    </button>
+                  </Link>
                   <h4>
                     Lisa <span>(wife)</span>
                   </h4>
                 </div>
                 <div className="rch-right">
+                  <Link to="/chatlog">
+                    <button className="btn-black-outlined">
+                      <BsChatRightText />
+                    </button>
+                  </Link>
+
                   <button className="btn-black-outlined">
-                    <BsThreeDotsVertical />
+                    <BsTrash />
                   </button>
-                  {/* <button className="btn-yellow">
-                    <BsChatTextFill /> Chat with AI
-                  </button> */}
                 </div>
               </div>
+
               <div className="relation-main-grid">
-                <div className="relation-box relation-video">
-                  <img src={RelationVideoImg} alt="" />
-                  <div className="relation-chat-box">
-                    <div className="relation-msgs-box">
-                      <div className="msg-person">
-                        <p>She doesn't love me :(</p>
-                      </div>
-                      <div className="msg-ai">
-                        <p>
-                          Hi There how can i can you today. Tell me, What is you
-                          name.
-                        </p>
-                      </div>
-                      <div className="msg-person">
-                        <p>Moiz Chaudhary</p>
-                      </div>
-                      <div className="msg-ai">
-                        <p>
-                          Tell me moiz what is the problem you are having with
-                          your wife?
-                        </p>
-                      </div>
-                      <div className="msg-person">
-                        <p>She doesn't love me :(</p>
-                      </div>
-                      <div className="msg-ai">
-                        <p>
-                          Hi There how can i can you today. Tell me, What is you
-                          name.
-                        </p>
-                      </div>
-                      <div className="msg-person">
-                        <p>Moiz Chaudhary</p>
-                      </div>
-                      <div className="msg-ai">
-                        <p>
-                          Tell me moiz what is the problem you are having with
-                          your wife?
-                        </p>
-                      </div>
-                      <div className="msg-person">
-                        <p>She doesn't love me :(</p>
-                      </div>
-                      <div className="msg-ai">
-                        <div className="typing-dots">
-                          <div></div>
-                          <div></div>
-                          <div></div>
-                        </div>
-                      </div>
+                <div className="relation-box relation-bot">
+                  <div className="chat-intro">
+                    <div className="rb-circle"></div>
+                    <div className="rb-top">
+                      <h2>
+                        Hey Saim! <br />
+                        What's Bothering You?
+                      </h2>
+                      <h6>Click Here to Start a Conversation</h6>
                     </div>
-                    <div className="chat-type-box">
-                      <div className="chat-input-box">
-                        <input
-                          type="text"
-                          placeholder="What's bothering you?"
-                        />
-                        <span>
-                          <BsImage />
-                        </span>
-                      </div>
-                      <button>
-                        <BsMicFill />
-                      </button>
+                    <div className="rb-logo-box">
+                      <img src={Logo2} alt="" />
                     </div>
+                    <p>
+                      Welcome, I'm your AI companion. Let's talk about what's on
+                      your mind with Lisa and find a way forward.
+                    </p>
+                  </div>
+                  {/* <img className="rv-video" src={RelationVideoImg} alt="" /> */}
+                  <video
+                    className="rv-video"
+                    src={TreeYellow}
+                    muted
+                    autoPlay
+                    loop
+                  ></video>
+                  <h3 className="chat-text">
+                    I am glad you decided to talk about it. What is it about
+                    Lisa that's bothering you, Saim?
+                  </h3>
+                  <div className="chat-mic">
+                    {isTalking ? (
+                      <BsSoundwave
+                        onClick={() => {
+                          setIsTalking(false);
+                        }}
+                      />
+                    ) : (
+                      <BsMic
+                        onClick={() => {
+                          setIsTalking(true);
+                        }}
+                      />
+                    )}
                   </div>
                 </div>
+
                 <div className="relation-box relation-status">
                   <h4>
                     Your <span>Relation</span>, is going smoothly
@@ -376,7 +502,7 @@ const Relation = () => {
                         <p>Goals Achieved</p>
                         <p>90%</p>
                       </div>
-                      <div className="rs-prog">
+                      <div className="rs-prog rs-prog-1">
                         <div
                           style={{
                             width: "90%",
@@ -389,7 +515,7 @@ const Relation = () => {
                         <p>Communication</p>
                         <p>50%</p>
                       </div>
-                      <div className="rs-prog">
+                      <div className="rs-prog rs-prog-2">
                         <div
                           style={{
                             width: "50%",
@@ -400,12 +526,12 @@ const Relation = () => {
                     <div className="rs-box">
                       <div className="rs-box-text">
                         <p>Overall Happiness</p>
-                        <p>35%</p>
+                        <p>65%</p>
                       </div>
-                      <div className="rs-prog">
+                      <div className="rs-prog rs-prog-3">
                         <div
                           style={{
-                            width: "35%",
+                            width: "65%",
                           }}
                         ></div>
                       </div>

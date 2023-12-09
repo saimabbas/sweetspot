@@ -124,6 +124,19 @@ const Home = () => {
         0
       )
       .fromTo(
+        ".hero-grid-right img",
+        {
+          y: "15rem",
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+          y: 48.75,
+          duration: 1.5,
+        },
+        0
+      )
+      .fromTo(
         ".hero-grid-left p",
         {
           y: "2.5rem",
@@ -173,25 +186,38 @@ const Home = () => {
       }
     );
     document.querySelectorAll(".features-grid").forEach((card) => {
-      gsap.fromTo(
-        card.querySelector(".features-grid-text > *"),
-        {
-          opacity: 0,
-          x: "2.5rem",
+      let fgAnim = gsap.timeline({
+        scrollTrigger: {
+          trigger: card,
+          start: "top 50%",
         },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 0.75,
-          stagger: {
-            each: 0.25,
+      });
+      fgAnim
+        .fromTo(
+          card.querySelector(".features-grid-text > h4"),
+          {
+            opacity: 0,
+            y: "2.5rem",
           },
-          scrollTrigger: {
-            trigger: card,
-            start: "top 75%",
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.75,
+          }
+        )
+        .fromTo(
+          card.querySelector(".features-grid-text > p"),
+          {
+            opacity: 0,
+            y: "1.5rem",
           },
-        }
-      );
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.75,
+          },
+          "<0.25"
+        );
     });
 
     let testimonialsAnim = gsap.timeline({
@@ -271,7 +297,9 @@ const Home = () => {
               <div className="box">
                 <div className="header-content">
                   <div className="home-header-line"></div>
-                  <img src={Logo1} alt="Logo1" />
+                  <Link to="/">
+                    <img src={Logo1} alt="Logo1" />
+                  </Link>
                   <div className="header-center">
                     <Link to="/">Home</Link>
                     <Link to="/dashboard">Dashboard</Link>
@@ -296,7 +324,9 @@ const Home = () => {
             {isMobHeaderOpen ? (
               <div className="header-mob">
                 <div className="header-mob-header">
-                  <img src={Logo1} alt="Logo1" />
+                  <Link to="/">
+                    <img src={Logo1} alt="Logo1" />
+                  </Link>
                   <span
                     className="header-mob-icon"
                     onClick={() => {
@@ -308,8 +338,18 @@ const Home = () => {
                 </div>
                 <div className="header-mob-body">
                   <Link to="/">Home</Link>
+
                   <Link to="/dashboard">Dashboard</Link>
+
                   <Link to="/settings">Settings</Link>
+
+                  <Link to="/login">
+                    <button className="btn-yellow">LogIn</button>
+                  </Link>
+
+                  <Link to="/signup">
+                    <button className="btn-black-outlined">Sign Up</button>
+                  </Link>
                 </div>
               </div>
             ) : null}
@@ -686,9 +726,6 @@ const Home = () => {
                   <div className="footer-bottom">
                     <p>© 2023 Sweet Spot Social LLC. All rights reserved</p>
                     <div>
-                      <a href="#">Home</a>
-                      <a href="#">Chat</a>
-                      <a href="#">Settings</a>
                       <a href="#">Privacy Policy</a>
                       <a href="#">Terms of Service</a>
                     </div>
