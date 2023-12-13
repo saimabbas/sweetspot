@@ -24,6 +24,7 @@ import {
   BsSoundwave,
   BsChatRightText,
   BsTrash2,
+  BsKeyboard,
 } from "react-icons/bs";
 import Logo1 from "../assets/img/logo-1.svg";
 import Logo2 from "../assets/img/emblem.png";
@@ -64,7 +65,9 @@ const Relation = () => {
   const [isNotiOpen, setIsNotiOpen] = useState(false);
   const [isTalking, setIsTalking] = useState(false);
   const [isChatLogOpen, setIsChatLogOpen] = useState(false);
+  const [isKeyboard, setIsKeyboard] = useState(false);
   const notificationRef = useRef(null);
+  const micRef = useRef(null);
   gsap.registerPlugin(
     Draggable,
     SplitText,
@@ -234,6 +237,14 @@ const Relation = () => {
             "<0"
           )
           .to(
+            ".mic-text-box",
+            {
+              y: 0,
+              duration: 1,
+            },
+            "<0"
+          )
+          .to(
             ".chat-intro",
             {
               zIndex: 0,
@@ -241,9 +252,25 @@ const Relation = () => {
             },
             "<0"
           );
+        /* .then(() => {
+            gsap.set(".mic-text-box", {
+              y: 0,
+            });
+            gsap.set(".chat-mic", {
+              opacity: 1,
+              scale: 1,
+            });
+          }); */
       });
     });
   }, []);
+
+  /*   useEffect(() => {
+    const micIcon = document.getElementById("chat-mic-icon");
+    if (micIcon) {
+      document.getElementById("chat-mic-icon").style.opacity = isKeyboard ? "0" : "1";
+    }
+  }, [isKeyboard]); */
 
   return (
     <div className="sweetspot">
@@ -309,7 +336,9 @@ const Relation = () => {
         <header className="global-header">
           <div className="box">
             <div className="header-content">
-              <img src={Logo1} alt="Logo1" />
+              <Link to="/">
+                <img src={Logo1} alt="Logo1" />
+              </Link>
               <div className="header-center">
                 <Link to="/">Home</Link>
                 <Link to="/dashboard">Dashboard</Link>
@@ -444,19 +473,79 @@ const Relation = () => {
                     I am glad you decided to talk about it. What is it about
                     Lisa that's bothering you, Saim?
                   </h3>
-                  <div className="chat-mic">
-                    {isTalking ? (
-                      <BsSoundwave
+
+                  {isKeyboard ? (
+                    <input
+                      className="chat-input-box"
+                      type="text"
+                      placeholder="What's bothering you?"
+                    />
+                  ) : (
+                    <div className="chat-mic" id="chat-mic-icon">
+                      {isTalking ? (
+                        <BsSoundwave
+                          onClick={() => {
+                            setIsTalking(false);
+                          }}
+                        />
+                      ) : (
+                        <BsMic
+                          onClick={() => {
+                            setIsTalking(true);
+                          }}
+                        />
+                      )}
+                    </div>
+                  )}
+
+                  <div className="mic-text-box">
+                    {isKeyboard ? (
+                      <span
+                        className="mt-active"
                         onClick={() => {
-                          setIsTalking(false);
+                          setIsKeyboard(true);
                         }}
-                      />
+                      >
+                        <BsKeyboard />
+                      </span>
                     ) : (
-                      <BsMic
+                      <span
                         onClick={() => {
-                          setIsTalking(true);
+                          setIsKeyboard(true);
                         }}
-                      />
+                      >
+                        <BsKeyboard />
+                      </span>
+                    )}
+                    {isKeyboard ? (
+                      <span
+                        onClick={() => {
+                          setIsKeyboard(false);
+                          setTimeout(() => {
+                            gsap.set("#chat-mic-icon", {
+                              opacity: 1,
+                              scale: 1,
+                            });
+                          }, 100);
+                        }}
+                      >
+                        <BsMic />
+                      </span>
+                    ) : (
+                      <span
+                        className="mt-active"
+                        onClick={() => {
+                          setIsKeyboard(false);
+                          setTimeout(() => {
+                            gsap.set("#chat-mic-icon", {
+                              opacity: 1,
+                              scale: 1,
+                            });
+                          }, 100);
+                        }}
+                      >
+                        <BsMic />
+                      </span>
                     )}
                   </div>
                 </div>

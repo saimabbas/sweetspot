@@ -359,9 +359,7 @@ const Home = () => {
                 <div className="hero-grid">
                   <div className="hero-grid-left">
                     <h6 className="satisfy">Get Started Now</h6>
-                    <h1>
-                      Reignite Your Love <br /> Rebuild Your Bond
-                    </h1>
+                    <h1>Build Your Personal Bond</h1>
                     <p>
                       The Sweet Spot App is designed to be a sanctuary for
                       anyone seeking a space for open and honest communication.

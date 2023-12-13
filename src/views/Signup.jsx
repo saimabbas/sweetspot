@@ -136,7 +136,7 @@ const Signup = () => {
           </div>
         ) : null}
         {step3 ? (
-          <div className="signup-box">
+          <div className="signup-box tuay 4">
             <div className="kyc-prog">
               <div className="kyc-circle-done">
                 <BsCheck />
@@ -153,103 +153,8 @@ const Signup = () => {
               <div className="kyc-circle-pending"></div>
               <div className="kyc-line"></div>
               <div className="kyc-circle-pending"></div>
-            </div>
-            <h1>Add your First Relation</h1>
-            <div className="sp-inputbox">
-              <label htmlFor="">
-                Your lover Gender
-                <span>others</span>
-              </label>
-              <div className="signup-btns">
-                <button className="btn-black">
-                  Male <span>👨🏻</span>{" "}
-                </button>
-                <button className="btn-black">
-                  Female <span>👩🏻</span>{" "}
-                </button>
-              </div>
-            </div>
-            <div className="sp-inputbox">
-              <label htmlFor="">Your lover Gender</label>
-              <input type="text" placeholder="Type here" />
-            </div>
-            <div className="sp-inputbox">
-              <label htmlFor="">How long you have been in Relationship?</label>
-              <div className="input-grp">
-                <button className="btn-black">
-                  <BsDashLg />
-                </button>
-                <input type="text" placeholder="Years" />
-                <button className="btn-black">
-                  <BsPlusLg />
-                </button>
-              </div>
-            </div>
-            <div className="sp-inputbox">
-              <label htmlFor="">
-                Add your lover image <span>(optional)</span>
-              </label>
-              <button className="btn-black attach-doc">
-                Attach document{" "}
-                <span>
-                  <MdOutlineImage />
-                </span>
-              </button>
-              <div className="doc-img-box">
-                {/* <img src="" alt="" /> */}
-                <span>
-                  <BsX />
-                </span>
-              </div>
-              <p>Picture name</p>
-              <h6>12 KB</h6>
             </div>
 
-            <div className="signup-bottom">
-              <div className="signup-btns-box">
-                <button
-                  className="btn-gray-1"
-                  onClick={() => {
-                    setStep2(true);
-                    setStep3(false);
-                  }}
-                >
-                  <BsArrowLeft />
-                </button>
-                <button
-                  className="btn-yellow"
-                  onClick={() => {
-                    setStep3(false);
-                    setStep4(true);
-                  }}
-                >
-                  Continue
-                </button>
-              </div>
-            </div>
-          </div>
-        ) : null}
-        {step4 ? (
-          <div className="signup-box">
-            <div className="kyc-prog">
-              <div className="kyc-circle-done">
-                <BsCheck />
-              </div>
-              <div className="kyc-line kyc-line-done"></div>
-              <div className="kyc-circle-done">
-                <BsCheck />
-              </div>
-              <div className="kyc-line kyc-line-done"></div>
-              <div className="kyc-circle-done">
-                <BsCheck />
-              </div>
-              <div className="kyc-line kyc-line-done"></div>
-              <div className="kyc-circle-current">
-                <BsStar />
-              </div>
-              <div className="kyc-line"></div>
-              <div className="kyc-circle-pending"></div>
-            </div>
             <h1>Tell Us About Yourself</h1>
             <div className="sp-inputbox">
               <label htmlFor="">What’s your age?</label>
@@ -288,6 +193,70 @@ const Signup = () => {
                 <button className="btn-black">NO</button>
               </div>
             </div>
+            <div className="signup-bottom">
+              <div className="signup-btns-box">
+                <button
+                  className="btn-gray-1"
+                  onClick={() => {
+                    setStep2(true);
+                    setStep3(false);
+                  }}
+                >
+                  <BsArrowLeft />
+                </button>
+                <button
+                  className="btn-yellow"
+                  onClick={() => {
+                    setStep3(false);
+                    setStep4(true);
+                  }}
+                >
+                  Continue
+                </button>
+              </div>
+            </div>
+          </div>
+        ) : null}
+        {step4 ? (
+          <div className="signup-box wp 5">
+            <div className="kyc-prog">
+              <div className="kyc-circle-done">
+                <BsCheck />
+              </div>
+              <div className="kyc-line kyc-line-done"></div>
+              <div className="kyc-circle-done">
+                <BsCheck />
+              </div>
+              <div className="kyc-line kyc-line-done"></div>
+              <div className="kyc-circle-done">
+                <BsCheck />
+              </div>
+              <div className="kyc-line kyc-line-done"></div>
+              <div className="kyc-circle-current">
+                <BsStar />
+              </div>
+              <div className="kyc-line"></div>
+              <div className="kyc-circle-pending"></div>
+            </div>
+
+            <h1>With who you are having problem with?</h1>
+
+            <div className="sp-inputbox">
+              <label htmlFor="">Choose Category</label>
+              <div className="signup-btns">
+                <button className="btn-black">Partner</button>
+                <button className="btn-black">Family</button>
+                <button className="btn-black">Friend</button>
+                <button className="btn-black">Professional</button>
+              </div>
+            </div>
+            <div className="sp-inputbox">
+              <label htmlFor="">Name of Relation</label>
+              <input
+                type="number"
+                placeholder="E.g. Uncle, Grandson, Wife, etc."
+              />
+            </div>
 
             <div className="signup-bottom">
               <div className="signup-btns-box">
@@ -314,7 +283,7 @@ const Signup = () => {
           </div>
         ) : null}
         {step5 ? (
-          <div className="signup-box">
+          <div className="signup-box ar 3">
             <div className="kyc-prog">
               <div className="kyc-circle-done">
                 <BsCheck />
@@ -336,23 +305,56 @@ const Signup = () => {
                 <BsStar />
               </div>
             </div>
-            <h1>With who you are having problem with</h1>
-
+            <h1>Add your First Relation</h1>
             <div className="sp-inputbox">
-              <label htmlFor="">Are you married?</label>
+              <label htmlFor="">Your Partner Name</label>
+              <input type="text" placeholder="Type here" />
+            </div>
+            <div className="sp-inputbox">
+              <label htmlFor="">
+                Your Partner Gender
+                <span>others</span>
+              </label>
               <div className="signup-btns">
-                <button className="btn-black">Husband</button>
-                <button className="btn-black">Wife</button>
-                <button className="btn-black">Kid 1</button>
-                <button className="btn-black">Kid 2</button>
-                <button className="btn-black">Kid 3</button>
-                <button className="btn-black">Father</button>
-                <button className="btn-black">Mother</button>
-                <button className="btn-black">Uncle</button>
-                <button className="btn-black">Aunt</button>
+                <button className="btn-black">
+                  Male <span>👨🏻</span>{" "}
+                </button>
+                <button className="btn-black">
+                  Female <span>👩🏻</span>{" "}
+                </button>
               </div>
             </div>
-
+            <div className="sp-inputbox">
+              <label htmlFor="">How long you have been in Relationship?</label>
+              <div className="input-grp">
+                <button className="btn-black">
+                  <BsDashLg />
+                </button>
+                <input type="text" placeholder="Years" />
+                <button className="btn-black">
+                  <BsPlusLg />
+                </button>
+              </div>
+            </div>
+            <div className="sp-inputbox">
+              <label htmlFor="">
+                Add your partner image <span>(optional)</span>
+              </label>
+              <button className="btn-black attach-doc">
+                Attach document{" "}
+                <span>
+                  <MdOutlineImage />
+                </span>
+              </button>
+              <div className="doc-img-box">
+                {/* <img src="" alt="" /> */}
+                <span>
+                  <BsX />
+                </span>
+              </div>
+              <p>Picture name</p>
+              <h6>12 KB</h6>
+            </div>
             <div className="signup-bottom">
               <div className="signup-btns-box">
                 <button

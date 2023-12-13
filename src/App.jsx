@@ -27,3 +27,8 @@ const App = () => {
 };
 
 export default App;
+
+/* 
+1. signup: 1. tell us about yourself 2. who's the problem 3. add relation --> partner, family, friend, professional -> text field for name of relation 
+2. mic and input field ... both 
+*/
